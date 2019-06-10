@@ -1,232 +1,310 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Guerilla Gaming</title>
+    <title>Guerilla Gaming</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <script src="vendor/jquery/jquery.min.js"></script>
 
-  <!-- Custom styles for this template -->
-  <link href="css/grayscale.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/grayscale.min.css" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $.getJSON('playercount.json', function (data) {
+                $(data).each(function (index, item) {
+                    $("#" + item.gamename).text(item.playercount);
+                })
+            });
+            $.getJSON('gamerrollname.json', function (data) {
+                $.each(data, function (key, value) {
+                    $(value).each(function (index, item) {
+                        $("#" + key).text(item);
+                    })
+                });
+            });
+        })
+
+    </script>
 
 </head>
 
 <body id="page-top">
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">GG - Community</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#community">Community</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#offer">Wir bieten</a>
-          </li>
-		  <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#games">Spiele</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Guerilla Gaming</h1>
-        <!--<h2 class="text-white-50 mx-auto mt-2 mb-5">Hier könnte etwas stehen.</h2> -->
-		<br/>
-        <a href="#offer" class="btn btn-primary js-scroll-trigger">Was wir bieten</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- community Section -->
-  <section id="community" class="about-section text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h1 class="text-white mb-4">Guerilla Gaming - GG</h1>
-          <p class="text-white-50" style="margin-bottom: 40px;">Willkommen bei Guerilla Gaming. Wir sind immer auf der Suche nach neuen Mitgliedern und würden dich gerne Willkommen heißen!</p>
-		  <h4 class="text-white mb-4">Über uns</h4>
-		  <p class="text-white-50">Wir sind eine Multigaming Community, deren Fokus im Aufbau einer Gemeinschaft liegt und denjenigen Support bietet, die sich in der Gamingszene verbessern möchten. </br>
-		  Unsere Community besteht aus leidenschaftlichen Spielern, egal ob Casual oder Competetive. Bei uns gibt es keinen Zwang für Onlinezeiten oder viele Regeln außer eine: Spaß haben!</p>
-        </div>
-      </div>
-      <img src="img/mai.png" class="img-fluid" alt="">
-    </div>
-  </section>
-
-  <!-- offer Section -->
-  <section id="offer" class="projects-section bg-light">
-    <div class="container">
-
-      <!-- Featured Project Row -->
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-        <div class="col-xl-8 col-lg-7">
-          <!-- <img class="img-fluid mb-3 mb-lg-0" src="img/discord.png" alt=""> -->
-		  <iframe src="https://discordapp.com/widget?id=581194404971282442&theme=dark" width="100%" height="416" allowtransparency="true" frameborder="0"></iframe>
-        </div>
-        <div class="col-xl-4 col-lg-5">
-          <div class="featured-text text-center text-lg-left">
-            <h4>Community</h4>
-            <p class="text-black-50 mb-0">Zahlreiche Mitglieder auf unserem Discord Server. Hier kannst du mit uns quatschen, zocken und Spaß haben.</p>
-          </div>
-        </div>
-      </div>
-	  
-	  <!-- Featured Project Row -->
-      <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-        <div class="col-xl-8 col-lg-7">
-          <img class="img-fluid mb-3 mb-lg-0" src="img/TTT.jpg" alt="">
-        </div>
-        <div class="col-xl-4 col-lg-5">
-          <div class="featured-text text-center text-lg-left">
-            <h4>Eigenen Custom TTT Server</h4>
-            <p class="text-black-50 mb-0">Auf unserem Custom TTT Server haben wir aktuell TTT Fate am Start. Der Server steht euch 24/7 bereit.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- games Section -->
-  <section id="games" class="projects-section" style="
-    padding-bottom: 0px;
-	padding-top: 0px;
-">
-  
-	<!-- Project One Row -->
-      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-        <div class="col-lg-6">
-          <img class="img-fluid" src="img/lol.jpg" alt="">
-        </div>
-        <div class="col-lg-6">
-          <div class="bg-black text-center h-100 project">
-            <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-left">
-                <h4 class="text-white">League Of Legends</h4>
-                <p class="mb-0 text-white-50">Ob Casual oder Competitive, bei uns findest du immer Spieler für ein Win.</p>
-                <hr class="d-none d-lg-block mb-0 ml-0">
-              </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">GG - Community</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#community">Community</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#offer">Wir bieten</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#games">Spiele</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-      </div>
-	  
-	  <!-- Project Two Row -->
-      <div class="row justify-content-center no-gutters">
-        <div class="col-lg-6">
-          <img class="img-fluid" src="img/overwatch.jpg" alt="">
-        </div>
-        <div class="col-lg-6 order-lg-first">
-          <div class="bg-black text-center h-100 project">
-            <div class="d-flex h-100">
-              <div class="project-text w-100 my-auto text-center text-lg-right">
-                <h4 class="text-white">Overwatch</h4>
-                <p class="mb-0 text-white-50">Auch in Overwatch sind wir am Start und mischen auch in den oberen Ligen mit.</p>
-                <hr class="d-none d-lg-block mb-0 mr-0">
-              </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Guerilla Gaming</h1>
+                <!--<h2 class="text-white-50 mx-auto mt-2 mb-5">Hier könnte etwas stehen.</h2> -->
+                <br />
+                <!--<a href="#offer" class="btn btn-primary js-scroll-trigger">Was wir bieten</a>-->
             </div>
-          </div>
         </div>
-      </div>
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section bg-black">
-    <div class="container">
+    </header>
 
-      <div class="row">
-
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Address</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+    <!-- community Section -->
+    <section id="community" class="about-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="text-white mb-4">Guerilla Gaming - GG</h1>
+                    <p class="text-white-50" style="margin-bottom: 40px;">Willkommen bei Guerilla Gaming. Wir sind immer auf der Suche nach neuen Mitgliedern und würden dich gerne Willkommen heißen!</p>
+                    <h4 class="text-white mb-4">Über uns</h4>
+                    <p class="text-white-50">
+                        Wir sind eine Multigaming Community, deren Fokus im Aufbau einer Gemeinschaft liegt und denjenigen Support bietet, die sich in der Gamingszene verbessern möchten. <br />
+                        Unsere Community besteht aus leidenschaftlichen Spielern, egal ob Casual oder Competetive. Bei uns gibt es keinen Zwang für Onlinezeiten oder viele Regeln außer eine: Spaß haben!
+                    </p>
+                </div>
             </div>
-          </div>
+            <img src="img/mai.png" class="img-fluid" alt="">
         </div>
+    </section>
 
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-envelope text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Email</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">
-                <a href="#">hello@example.com</a>
-              </div>
+    <!-- offer Section -->
+    <section id="offer" class="bg-light" style="padding-top:7em;">
+        <div class="container">
+            <p class="h1 text-center">Die GG Community bietet euch:</p>
+            <br />
+            <br />
+            <!-- Featured Project Row -->
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="col-xl-8 col-lg-7">
+                    <!-- <img class="img-fluid mb-3 mb-lg-0" src="img/discord.png" alt=""> -->
+                    <iframe src="https://discordapp.com/widget?id=581194404971282442&theme=dark" width="100%" height="416" allowtransparency="true" frameborder="0"></iframe>
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="featured-text text-center text-lg-left">
+                        <h4>Community Discord</h4>
+                        <p class="text-black-50 mb-0">Zahlreiche Mitglieder auf unserem Discord Server. Hier kannst du mit uns quatschen, zocken und Spaß haben.<br /><br />Dazu haben wir noch unseren eigenen Discord Bot der viele nützliche Funktionen bietet.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-md-4 mb-3 mb-md-0">
-          <div class="card py-4 h-100">
-            <div class="card-body text-center">
-              <i class="fas fa-mobile-alt text-primary mb-2"></i>
-              <h4 class="text-uppercase m-0">Phone</h4>
-              <hr class="my-4">
-              <div class="small text-black-50">+1 (555) 902-8832</div>
+            <!-- Featured Project Row -->
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="col-xl-8 col-lg-7">
+                    <img class="img-fluid mb-3 mb-lg-0" src="img/TTT.jpg" alt="">
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="featured-text text-center text-lg-left">
+                        <h4>TTT Server mit TTT-Fate</h4>
+                        <p class="text-black-50 mb-0">Auf unserem TTT Server läuft aktuell der TTT Mod 'TTT Fate'.<br />TTT Fate unterscheidet sich von dem normalen TTT nur in zwei hinsichten: Der Jackal mischt jetzt mit und Klassen für jeden. Der Server steht euch 24/7 bereit.</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <div class="social d-flex justify-content-center">
-        <a href="#" class="mx-2">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="mx-2">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
+    <!-- games Section -->
+    <section id="games" class="projects-section bg-light">
+        <div class="container">
+            <p class="h1 text-center">Unsere größten Spiele:</p>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/TTT.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">TTT Text</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="garrys_mod_ttt"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/lol.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Egal Casual oder Competitive, wir sind überall dabei.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="league_of_legends"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/overwatch.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Auch in Overwatch sind wir verteten. Bei uns musst du dir keine sorgen mehr Teammates machen die nichts auf die Reihe bekommen.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="overwatch"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/tabletop.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Egal ob UNO, Secret Hitler, Codename: Pictures oder andere Boardgames, wir sind so ziemlich für alles zu haben.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="tabletop_simulator"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/Dota-2-Auto-Chess.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Wir können zwar kein richtiges Schach aber dieses Spiel beherschen einige von uns.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="dota2_auto_chess"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/minecraft.png" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Minecraft Text.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="minecraft"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/csgo.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Cs: GO Text.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="csgo"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/rainbow6.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Rainbow6 Text.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="rainbow6"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <!--<section id="contact" class="contact-section bg-black">
+        <div class="container">
 
-    </div>
-  </section>
+            <div class="row">
 
-  <!-- Footer -->
-  <footer class="bg-black small text-center text-white-50">
-    <div class="container">
-      Copyright &copy; Your Website 2019
-    </div>
-  </footer>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Address</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50">
+                                <a href="#">hello@example.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50">+1 (555) 902-8832</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/grayscale.min.js"></script>
+            <div class="social d-flex justify-content-center">
+                <a href="#" class="mx-2">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="mx-2">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="mx-2">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>-->
+    <!-- Footer -->
+    <footer class="bg-black small text-center text-white-50">
+        <div class="container">
+            Copyright &copy; Sirzento 2019
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/grayscale.min.js"></script>
 
 </body>
 
