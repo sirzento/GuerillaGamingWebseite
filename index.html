@@ -11,7 +11,7 @@
     <title>Guerilla Gaming</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -31,18 +31,20 @@
             $.getJSON('gamerrollname.json', function (data) {
                 $.each(data, function (key, value) {
                     $(value).each(function (index, item) {
-                        $("#" + key).text(item);
+                        $("." + key).each(function (index2, item2) {
+                            if ($(item2).text() != "") {
+                                $(item2).text($(item2).text() + "\n" + item);
+                            } else {
+                                $(item2).text(item);
+                            }
+                        })
                     })
                 });
             });
         })
-
     </script>
-
 </head>
-
 <body id="page-top">
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
@@ -89,7 +91,7 @@
                     <h4 class="text-white mb-4">Über uns</h4>
                     <p class="text-white-50">
                         Wir sind eine Multigaming Community, deren Fokus im Aufbau einer Gemeinschaft liegt und denjenigen Support bietet, die sich in der Gamingszene verbessern möchten. <br />
-                        Unsere Community besteht aus leidenschaftlichen Spielern, egal ob Casual oder Competetive. Bei uns gibt es keinen Zwang für Onlinezeiten oder viele Regeln außer eine: Spaß haben!
+                        Unsere Community besteht aus leidenschaftlichen Spielern, egal ob Casual oder Competetive. Bei uns gibt es keinen Zwang für Onlinezeiten oder viele strenge Regeln, außer eine: Spaß haben!
                     </p>
                 </div>
             </div>
@@ -110,22 +112,22 @@
                     <iframe src="https://discordapp.com/widget?id=581194404971282442&theme=dark" width="100%" height="416" allowtransparency="true" frameborder="0"></iframe>
                 </div>
                 <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-center text-lg-left">
+                    <div class="featured-text text-center text-lg-left" style="padding-left:20px">
                         <h4>Community Discord</h4>
-                        <p class="text-black-50 mb-0">Zahlreiche Mitglieder auf unserem Discord Server. Hier kannst du mit uns quatschen, zocken und Spaß haben.<br /><br />Dazu haben wir noch unseren eigenen Discord Bot der viele nützliche Funktionen bietet.</p>
+                        <p class="text-black-50 mb-0">Zahlreiche Mitglieder auf unserem Discord Server. Hier kannst du mit uns quatschen, zocken und Spaß haben.<br /><br />Dazu haben wir noch unseren eigenen Discord Bot der viele nützliche Funktionen bietet.<br /><br /><a href="https://discord.gg/6FnjGq8">&gt;&gt;&gt;Zum Discord!&lt;&lt;&lt;</a></a></p>
                     </div>
                 </div>
             </div>
 
             <!-- Featured Project Row -->
-            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5" style="margin: 0px !important">
                 <div class="col-xl-8 col-lg-7">
                     <img class="img-fluid mb-3 mb-lg-0" src="img/TTT.jpg" alt="">
                 </div>
                 <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-center text-lg-left">
-                        <h4>TTT Server mit TTT-Fate</h4>
-                        <p class="text-black-50 mb-0">Auf unserem TTT Server läuft aktuell der TTT Mod 'TTT Fate'.<br />TTT Fate unterscheidet sich von dem normalen TTT nur in zwei hinsichten: Der Jackal mischt jetzt mit und Klassen für jeden. Der Server steht euch 24/7 bereit.</p>
+                    <div class="featured-text text-center text-lg-left" style="padding-left:20px">
+                        <h4>TTT Server mit Fate Addon</h4>
+                        <p class="text-black-50 mb-0">Auf unserem Server läuft aktuell Trouble in Terrorist Town mit dem Addon 'TTT Fate' bekannt von Dhalucard & Co.<br /><br />TTT Fate fügt wwei große Änderungen hinzu: Der Jackal und Klassen für jeden. Der Server steht euch 24/7 bereit.</p>
                     </div>
                 </div>
             </div>
@@ -142,9 +144,9 @@
                 <div class="col-md-3" style="padding-left:15px; padding-right:15px">
                     <div class="card">
                         <img class="card-img-top" src="img/TTT.jpg" alt="Card image cap">
-                        <div class="card-body">
+                        <!--<div class="card-body">
                             <p class="card-text">TTT Text</p>
-                        </div>
+                        </div>-->
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mitglieder: <span id="garrys_mod_ttt"></span></li>
                         </ul>
@@ -153,9 +155,9 @@
                 <div class="col-md-3" style="padding-left:15px; padding-right:15px">
                     <div class="card">
                         <img class="card-img-top" src="img/lol.jpg" alt="Card image cap">
-                        <div class="card-body">
+                        <!--<div class="card-body">
                             <p class="card-text">Egal Casual oder Competitive, wir sind überall dabei.</p>
-                        </div>
+                        </div>-->
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mitglieder: <span id="league_of_legends"></span></li>
                         </ul>
@@ -163,23 +165,23 @@
                 </div>
                 <div class="col-md-3" style="padding-left:15px; padding-right:15px">
                     <div class="card">
-                        <img class="card-img-top" src="img/overwatch.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Auch in Overwatch sind wir verteten. Bei uns musst du dir keine sorgen mehr Teammates machen die nichts auf die Reihe bekommen.</p>
-                        </div>
+                        <img class="card-img-top" src="img/tabletop.jpg" alt="Card image cap">
+                        <!--<div class="card-body">
+                            <p class="card-text">Egal ob UNO, Secret Hitler, Codename: Pictures oder andere Boardgames, wir sind so ziemlich für alles zu haben.</p>
+                        </div>-->
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Mitglieder: <span id="overwatch"></span></li>
+                            <li class="list-group-item">Mitglieder: <span id="tabletop_simulator"></span></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-3" style="padding-left:15px; padding-right:15px">
                     <div class="card">
-                        <img class="card-img-top" src="img/tabletop.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Egal ob UNO, Secret Hitler, Codename: Pictures oder andere Boardgames, wir sind so ziemlich für alles zu haben.</p>
-                        </div>
+                        <img class="card-img-top" src="img/overwatch.jpg" alt="Card image cap">
+                        <!--<div class="card-body">
+                            <p class="card-text">Auch in Overwatch sind wir verteten. Bei uns musst du dir keine sorgen mehr Teammates machen die nichts auf die Reihe bekommen.</p>
+                        </div>-->
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Mitglieder: <span id="tabletop_simulator"></span></li>
+                            <li class="list-group-item">Mitglieder: <span id="overwatch"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -188,32 +190,10 @@
             <div class="row">
                 <div class="col-md-3" style="padding-left:15px; padding-right:15px">
                     <div class="card">
-                        <img class="card-img-top" src="img/Dota-2-Auto-Chess.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Wir können zwar kein richtiges Schach aber dieses Spiel beherschen einige von uns.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Mitglieder: <span id="dota2_auto_chess"></span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
-                    <div class="card">
-                        <img class="card-img-top" src="img/minecraft.png" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Minecraft Text.</p>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Mitglieder: <span id="minecraft"></span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
-                    <div class="card">
                         <img class="card-img-top" src="img/csgo.jpg" alt="Card image cap">
-                        <div class="card-body">
+                        <!--<div class="card-body">
                             <p class="card-text">Cs: GO Text.</p>
-                        </div>
+                        </div>-->
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mitglieder: <span id="csgo"></span></li>
                         </ul>
@@ -221,10 +201,32 @@
                 </div>
                 <div class="col-md-3" style="padding-left:15px; padding-right:15px">
                     <div class="card">
+                        <img class="card-img-top" src="img/Dota-2-Auto-Chess.jpg" alt="Card image cap">
+                        <!--<div class="card-body">
+                            <p class="card-text">Wir können zwar kein richtiges Schach aber dieses Spiel beherschen einige von uns.</p>
+                        </div>-->
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="dota2_auto_chess"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
+                        <img class="card-img-top" src="img/minecraft.jpg" alt="Card image cap">
+                        <!--<div class="card-body">
+                            <p class="card-text">Minecraft Text.</p>
+                        </div>-->
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Mitglieder: <span id="minecraft"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3" style="padding-left:15px; padding-right:15px">
+                    <div class="card">
                         <img class="card-img-top" src="img/rainbow6.jpg" alt="Card image cap">
-                        <div class="card-body">
+                        <!--<div class="card-body">
                             <p class="card-text">Rainbow6 Text.</p>
-                        </div>
+                        </div>-->
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Mitglieder: <span id="rainbow6"></span></li>
                         </ul>
@@ -234,48 +236,41 @@
         </div>
     </section>
     <!-- Contact Section -->
-    <!--<section id="contact" class="contact-section bg-black">
+    <section id="contact" class="contact-section bg-black">
         <div class="container">
-
             <div class="row">
-
                 <div class="col-md-4 mb-3 mb-md-0">
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
-                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Address</h4>
+                            <i class="fas fa fa-briefcase text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Community Leader</h4>
                             <hr class="my-4">
-                            <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            <div class="small text-black-50 communityleader" style="white-space:pre-line"></div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4 mb-3 mb-md-0">
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
-                            <i class="fas fa-envelope text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Email</h4>
+                            <i class="fas fa fa-users text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Moderatoren</h4>
                             <hr class="my-4">
-                            <div class="small text-black-50">
-                                <a href="#">hello@example.com</a>
-                            </div>
+                            <div class="small text-black-50 mod_ttt mod_ow mod_lol" style="white-space:pre-line"></div>
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4 mb-3 mb-md-0">
                     <div class="card py-4 h-100">
                         <div class="card-body text-center">
-                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <i class="fas fa fa-code text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Techniker</h4>
                             <hr class="my-4">
-                            <div class="small text-black-50">+1 (555) 902-8832</div>
+                            <div class="small text-black-50 tech" style="white-space:pre-line"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="social d-flex justify-content-center">
+            <!--<div class="social d-flex justify-content-center">
                 <a href="#" class="mx-2">
                     <i class="fab fa-twitter"></i>
                 </a>
@@ -285,10 +280,9 @@
                 <a href="#" class="mx-2">
                     <i class="fab fa-github"></i>
                 </a>
-            </div>
-
+            </div>-->
         </div>
-    </section>-->
+    </section>
     <!-- Footer -->
     <footer class="bg-black small text-center text-white-50">
         <div class="container">
