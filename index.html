@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+	<meta property="og:image" content="img/bg-masthead.jpg">
 
     <title>Guerilla Gaming</title>
 
@@ -29,7 +30,7 @@
                 })
             });
             $.getJSON('gamerrollname.json', function (data) {
-                $.each(data, function (key, value) {
+                $.each(data[0], function (key, value) {
                     $(value).each(function (index, item) {
                         $("." + key).each(function (index2, item2) {
                             if ($(item2).text() != "") {
@@ -114,7 +115,7 @@
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left" style="padding-left:20px">
                         <h4>Community Discord</h4>
-                        <p class="text-black-50 mb-0">Zahlreiche Mitglieder auf unserem Discord Server. Hier kannst du mit uns quatschen, zocken und Spaß haben.<br /><br />Dazu haben wir noch unseren eigenen Discord Bot der viele nützliche Funktionen bietet.<br /><br /><a href="https://discord.gg/6FnjGq8">&gt;&gt;&gt;Zum Discord!&lt;&lt;&lt;</a></a></p>
+                        <p class="text-black-50 mb-0">Zahlreiche Mitglieder auf unserem Discord Server. Hier kannst du mit uns quatschen, zocken und Spaß haben.<br /><br />Dazu haben wir noch unseren eigenen Discord Bot der viele nützliche Funktionen bietet.<br /><br /><a href="https://discord.gg/6FnjGq8">&gt;&gt;&gt;Zum Discord!&lt;&lt;&lt;</a></p>
                     </div>
                 </div>
             </div>
@@ -127,7 +128,7 @@
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left" style="padding-left:20px">
                         <h4>TTT Server mit Fate Addon</h4>
-                        <p class="text-black-50 mb-0">Auf unserem Server läuft aktuell Trouble in Terrorist Town mit dem Addon 'TTT Fate' bekannt von Dhalucard & Co.<br /><br />TTT Fate fügt wwei große Änderungen hinzu: Der Jackal und Klassen für jeden. Der Server steht euch 24/7 bereit.</p>
+                        <p class="text-black-50 mb-0">Auf unserem Server läuft aktuell Trouble in Terrorist Town mit dem Addon 'TTT Fate' bekannt von Dhalucard & Co.<br /><br />TTT Fate fügt zwei große Änderungen hinzu: Der Jackal und Klassen für jeden. Der Server steht euch 24/7 bereit.<br /><br /><a href="steam://connect/guerillagaming.eu:27015">&gt;&gt;&gt;Zum Server!&lt;&lt;&lt;</a></p>
                     </div>
                 </div>
             </div>
@@ -195,7 +196,7 @@
                             <p class="card-text">Cs: GO Text.</p>
                         </div>-->
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Mitglieder: <span id="csgo"></span></li>
+                            <li class="list-group-item">Mitglieder: <span id="cs_go"></span></li>
                         </ul>
                     </div>
                 </div>
@@ -228,7 +229,7 @@
                             <p class="card-text">Rainbow6 Text.</p>
                         </div>-->
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Mitglieder: <span id="rainbow6"></span></li>
+                            <li class="list-group-item">Mitglieder: <span id="r6"></span></li>
                         </ul>
                     </div>
                 </div>
